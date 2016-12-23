@@ -23,6 +23,8 @@ import com.bte.however.exception.UserNotFoundException;
 import com.sun.tools.xjc.reader.xmlschema.bindinfo.BIConversion.User;
 
 /**
+ * Data Access Object asociado al usuario
+ * 
  * @author benauca
  *
  */

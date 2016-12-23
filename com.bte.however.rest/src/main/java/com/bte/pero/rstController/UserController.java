@@ -3,7 +3,8 @@ package com.bte.pero.rstController;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.bte.however.dao.UserDao;
 import com.bte.however.domain.UserDomain;
 import com.bte.however.exception.UserNotFoundException;
+import com.bte.however.exception.UserNotValidException;
 import com.bte.hwvr.model.User;
 import com.bte.pero.bean.Greeting;
 
@@ -23,7 +25,7 @@ public class UserController {
 
 	private static final String template = "Hello, %s!";
 	private final AtomicLong counter = new AtomicLong();
-	private Logger _logger = Logger.getLogger(UserController.class);
+	private Logger _logger = LogManager.getLogger(UserController.class);
 
 	@RequestMapping("/greeting")
 	public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
@@ -41,13 +43,16 @@ public class UserController {
 	public ResponseEntity<User> createUser(@RequestBody final User user) {
 		_logger.info("-------------------------------------------: " + user);
 		UserDao aDao = new UserDao();
-		UserDomain anUserDao = new UserDomain();
-		anUserDao.setFullName(user.getFullName());
-		anUserDao.setEmail(user.getEmail());
-		anUserDao.setAuthType(user.getAuthType());
-		anUserDao.setLogin(user.getLogin());
-		aDao.persits(anUserDao);
-		user.setId(anUserDao.getIdUser());
+		UserDomain anUserDom = new UserDomain();
+		anUserDom.setFullName(user.getFullName());
+		anUserDom.setEmail(user.getEmail());
+		anUserDom.setAuthType(user.getAuthType());
+		anUserDom.setLogin(user.getLogin());
+		anUserDom.setPassword(user.getPassword());
+		anUserDom.setAdmin(user.isAdmin());
+		aDao.persits(anUserDom);
+		user.setId(anUserDom.getIdUser());
+		_logger.debug(user.toString());
 		return new ResponseEntity<User>(user, HttpStatus.OK);
 	}
 
@@ -64,11 +69,17 @@ public class UserController {
 		return result;
 	}
 
-	@RequestMapping("/userByEmail")
-	public User getUserByEmail(@RequestParam(value = "email", required = true) String email)
-			throws UserNotFoundException {
+	@RequestMapping("/validateUser")
+	public User getUserByEmail(@RequestParam(value = "email", required = true) String email,
+			@RequestParam(value = "password", required = true) String password)
+			throws UserNotFoundException, UserNotValidException {
 		UserDao anUsrDao = new UserDao();
 		UserDomain aDomain = anUsrDao.findUserByEmail(email);
+
+		if (!aDomain.getPassword().equals(password)) {
+			_logger.error("Usuario no válido. Revise la contraseña introducida por el usuario.");
+			throw new UserNotValidException("Usuario no válido. Revise la contraseña introducida por el usuario.");
+		}
 		User result = new User();
 		result.setAuthType(aDomain.getAuthType());
 		result.setEmail(aDomain.getEmail());
