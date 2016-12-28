@@ -27,19 +27,7 @@ public class UserController {
 	private final AtomicLong counter = new AtomicLong();
 	private Logger _logger = LogManager.getLogger(UserController.class);
 
-	@RequestMapping("/greeting")
-	public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
-		_logger.info("Esto es una prueba ");
-		return new Greeting(counter.incrementAndGet(), String.format(template, name));
-	}
-
-	// @RequestMapping(value="/user", method=RequestMethod.POST )
-	// public void saveUser(@RequestParam(value = "idUser", required = true)
-	// long idUser) {
-	// _logger.info("-----------------------------------------------------------------------------");
-	// }
-
-	@RequestMapping(value = "/user/new", method = RequestMethod.POST)
+	@RequestMapping(value = "/however/user/new", method = RequestMethod.POST)
 	public ResponseEntity<User> createUser(@RequestBody final User user) {
 		_logger.info("-------------------------------------------: " + user);
 		UserDao aDao = new UserDao();
@@ -56,7 +44,7 @@ public class UserController {
 		return new ResponseEntity<User>(user, HttpStatus.OK);
 	}
 
-	@RequestMapping("/user")
+	@RequestMapping(value="/however/user/get", method=RequestMethod.POST)
 	public User getUser(@RequestParam(value = "idUser", required = true) int idUser) throws UserNotFoundException {
 		UserDao anUsrDao = new UserDao();
 		UserDomain aDomain = anUsrDao.findUserById(new Integer(idUser));
@@ -69,7 +57,7 @@ public class UserController {
 		return result;
 	}
 
-	@RequestMapping("/validateUser")
+	@RequestMapping(value="/however/user/validateUser", method=RequestMethod.POST)
 	public User getUserByEmail(@RequestParam(value = "email", required = true) String email,
 			@RequestParam(value = "password", required = true) String password)
 			throws UserNotFoundException, UserNotValidException {
@@ -89,10 +77,11 @@ public class UserController {
 		return result;
 	}
 
-	@RequestMapping("/users")
+	@RequestMapping(value="/however/user/list", method=RequestMethod.POST)
 	public List<User> getUsers() {
 		UserDao anUserDao = new UserDao();
-		return null;// anUserDao.findAll();
+		anUserDao.findAll();
+		return null;
 	}
 
 }
