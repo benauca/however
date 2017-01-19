@@ -5,8 +5,13 @@
 <script
 	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
 <script type="text/javascript" src="login/registerPage.js"></script>
-<link rel="stylesheet" href="/css/hwrStyles.css">
 <link rel="icon" type="image/png" href="login/howEver2.png">
+<link rel="stylesheet" href="/css/hwrStyles.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css"
+	integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi"
+	crossorigin="anonymous">
+
 <title>However</title>
 </head>
 <body ng-controller="registerController" bgcolor="">
@@ -27,22 +32,36 @@
 			<li><a href="news.html">News</a></li>
 		</ul>
 	</nav>
-	<form action="index.html" method="post" >
-		<span> <img src="login/howEver2.png" height="50px" width="50px" />
-			<h2>However</h2></span>
-		<h3 ng-model="Text01">{{Text01}}</h3>
+	
+	<form class="form-login" action="index.html" method="post">
+		<span><h2 class="login">
+				<img src="login/howEver2.png" height="50px" width="50px" /> However
+			</h2></span>
 		<fieldset>
-			<label for="user">Nombre Usuario</label> <input id="user" type="text"
-				placeholder="Usuario..." /> <label for="email">Dirección de
-				Correo</label> <input id="email" type="type"
-				placeholder="Dirección de Correo..." ng-model="email" /> <label
-				for="confirm">Confirmar dirección de correo</label> <input
-				type="text" id="confirm" ng-model="emailConfirm"> <label
-				for="password">Contraseña</label> <input type="password"
-				id="password" ng-model="password" placeholder="Contraseña" /> <input
-				type="button" value="Registrarte" ng-click="createUser()" /> <label>{{email}}</label>
+			<legend>Registrarse HowEver</legend>
+			<div class="form-group">
+				<input class="form-login" id="user" type="text"
+					placeholder="Usuario..." />
+			</div>
+			<div class="form-group">
+				<input id="email" class="form-login" type="type"
+					placeholder="Dirección de Correo..." ng-model="email" />
+			</div>
+			<div class="form-group">
+				<input class="form-login" type="text" id="confirm"
+					ng-model="emailConfirm" placeholder="Confirmar Correo">
+			</div>
+			<div class="form-group">
+				<input class="form-login" type="password" id="password"
+					ng-model="password" placeholder="Contraseña" />
+			</div>
+			<div class="form-group">
+				<input class="form-register" type="button" value="Registrarte"
+					ng-click="createUser()" />
+			</div>
+			<label class="label-login">Ya tienes cuenta. <a
+				href="index.html">Login..</a></label>
 		</fieldset>
 	</form>
-	<a href="index.html">Volver..</a>
 </body>
 </html>
