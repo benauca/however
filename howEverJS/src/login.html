@@ -19,56 +19,63 @@
 <body bgcolor="#FFFFFFF">
 	<header>
 		<ul>
-			<li><a href="home.html">Home</a>
-				<ul>
-					<li><a href="presentation.html">presentation</a></li>
-					<li><a href="contact.html">contact</a></li>
-				</ul></li>
-			<li><a href="blog.html">Blog</a></li>
-			<li><a href="shop.html">shop</a>
-				<ul>
-					<li><a href="candy.html">candy</a></li>
-					<li><a href="chocolate.html">chocolate</a></li>
-					<li><a href="icecream.html">ice cream</a></li>
-				</ul></li>
-			<li><a href="news.html">News</a></li>
+			<li><a href="index.html" id="however"><img alt=""
+					src="login/howEver2.png" id="logo" /> HowEver</a></li>
 		</ul>
 	</header>
 	<div class="container">
 		<div class="row">
-			<div class="col-mx-6">
+			<section class="col-md-4 sect-login form-login">
 				<form class="form-login" action="index.html">
 					<span><h2 class="login">
 							<img src="login/howEver2.png" height="50px" width="50px" />
 							However
 						</h2></span>
-					<fieldset>
-						<legend> Login HowEver</legend>
+					<div id="center" class="form-group">
 						<div class="form-group">
 							<input class="form-login" id="user" type="text"
-								placeholder="Usuario..." />
+								placeholder="Usuario/Email..." />
 						</div>
 						<div class="form-group">
-							<input class="form-login" id="pass" type="password"
-								placeholder="Contraseña..." />
+							<input class="form-login" type="password" id="password"
+								ng-model="password" placeholder="Contraseña" />
 						</div>
-						<div class="form-group">
-							<input class="form-register" type="button" value="Login" />
+						<div id="center" class="form-group">
+							<input type="button" class="form-register" value="LOGIN" />
 						</div>
-					</fieldset>
-					<label class="label-login">Forgot Password. <a
-						href="register.html"> Registrate en segundos...</a></label>
-					<label class="label-login">Eres Social. Conectacte con tu cuenta Favorifa</label>
-					<div class="col-mx-2">
-							<input type="button" id="btnGoogle" name="btnGoogle"
-								value="Google+" /> <input type="button" id="btnFcb"
-								name="btnFcb" value="Facebook" /> <input type="button"
-								id="btnTwt" name="btnTwt" value="Twitter" />
+
+						<label class="label-login">Olvidó la contraseña. <a
+							class="label-login" href=""> Restablezcala aquí</a>
+						</label>
+						<hr id="separator" />
+						
+						<label class="label-login"> ¿ Eres Social ?. <span> Conectate con tu cuenta Favorita</span>
+						</label>
+						<div id="center">
+							<button type="button" class="google">
+								<span>Inicia session Con Google</span>
+							</button>
 						</div>
+
+						<div id="center">
+							<button type="button" class="facebook">
+								<span>Inicia Sesion con Facebook</span>
+							</button>
+						</div>
+						<a href="register.html" class="label-login">Eres Nuevo.
+							Registrate Aquí</a>
+
+					</div>
 				</form>
-			</div>
-			<div class="col-mx-6"
-				style="background-image: url('startup-photos.jpg');"></div>
+			</section>
+			<article class="col-md-8">
+				<h2 class="login">Organiza Y Comparte Tus Ideas</h2>
+				<ul>
+					<li>Gestiona Tus Ideas</li>
+					<li>Organiza Tus Proyectos</li>
+					<li>Comparte Tu conocimiento</li>
+				</ul>
+			</article>
 		</div>
 	</div>
 </body>
