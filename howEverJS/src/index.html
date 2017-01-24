@@ -14,52 +14,57 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js"
 	integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK"
 	crossorigin="anonymous"></script>
+
+<style>
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+</style>
 <link rel="stylesheet" href="/css/hwrStyles.css">
 </head>
 <body bgcolor="#FFFFFFF">
-	<nav>
+	<header>
 		<ul>
-			<li><a href="home.html">Home</a>
-				<ul>
-					<li><a href="presentation.html">presentation</a></li>
-					<li><a href="contact.html">contact</a></li>
-				</ul></li>
-			<li><a href="blog.html">Blog</a></li>
-			<li><a href="shop.html">shop</a>
-				<ul>
-					<li><a href="candy.html">candy</a></li>
-					<li><a href="chocolate.html">chocolate</a></li>
-					<li><a href="icecream.html">ice cream</a></li>
-				</ul></li>
-			<li><a href="news.html">News</a></li>
+			<li><a href="index.html" id="however"><img alt=""
+					src="login/howEver2.png" id="logo" /> HowEver</a></li>
 		</ul>
-	</nav>
+	</header>
 	<div class="container">
 		<div class="row">
-			<div class="col-mx-2" style="background-color: green;">
+			<section class="col-md-4 sect-login form-login">
 				<form class="form-login" action="index.html">
 					<span><h2 class="login">
 							<img src="login/howEver2.png" height="50px" width="50px" />
 							However
 						</h2></span>
-					<fieldset>
-						<legend> Login HowEver</legend>
-						<div class="form-group">
-							<input class="form-login" id="user" type="text"
-								placeholder="Usuario..." />
+					<div id="center" class="form-group">
+						<div>
+							<button type="button" class="google">
+								<span>Regístrate Con Google</span>
+							</button>
 						</div>
-						<div class="form-group">
-							<input class="form-login" id="pass" type="password"
-								placeholder="Contraseña..." />
+						<div id="center">
+							<button type="button" class="facebook">
+								<span>Regístrate Con Facebook</span>
+							</button>
 						</div>
-						<div class="form-group">
-							<input class="form-register" type="button" value="Login" />
-						</div>
-					</fieldset>
-					<label class="label-login">Forgot Password. <a
-						href="register.html"> Registrate en segundos...</a></label>
+						<a href="register.html" class="label-login">Registrate con tu
+							cuenta de correo.</a> 
+						<label class="label-login">Al registrate<a class="label-login" href=""> aceptas los Terminos Y
+								Condiciones de uso</a> y Politicas de Privacidad de However</label>
+						<hr id="separator" />
+						<a href="login.html" class="label-login">Ya tienes cuenta.
+							Inicia Sesión aquí</a>
+
+					</div>
 				</form>
-			</div>
+			</section>
+			<article class="col-md-8">
+				<h2 class="login">Organiza Y Comparte Tus Ideas</h2>
+				<ul>
+					<li>Gestiona Tus Ideas</li>
+					<li>Organiza Tus Proyectos</li>
+					<li>Comparte Tu conocimiento</li>
+				</ul>
+			</article>
 		</div>
 	</div>
 </body>

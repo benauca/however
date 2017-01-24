@@ -1,53 +1,103 @@
 @CHARSET "ISO-8859-1";
 
+#however {
+	size: 20px;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bold;
+	color: white;
+	padding: 5px;
+	margin-left: 3px;
+}
+
 #logo {
-	position: absolute;
-	right: 10px;
-	bottom: 10px;
+	height: 25px;
+	width: 25px;
 }
 
-body{
+
+#form_login {
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
 
+#center {
+	text-align: center;
+}
+section.sect-login {
+	border-right: solid;
+	border-right-color: white;
+	border-right-width: 5px;
+}
+
+#separator{
+	width: 75px;
+	text-align: center;
+	color: white;
+	
+}
 
 form.form-login {
-	width: 20%;
-	height: 5%;
+	width: 100%;
+	height: 100%;
 	border-color: black;
 	border: medium;
 	margin-left: 5%;
 	margin-top: 5%;
 }
-a{
+
+a {
 	font-size: 12px;
+	margin-left: 12px;
 }
+
 h2.login {
 	font-family: 'Montserrat', sans-serif;
 	font-size: large;
+	color: white;
+	padding-top: 70px;
+	padding-right: 50px;
+	padding-left: 50px;
+	padding-bottom: 20px;
+	text-align: center;
 }
 
 h1 {
 	font-family: 'Montserrat', sans-serif;
 	font-size: x-large;
+	color
+	=white;
 }
+
 label {
 	font-family: 'Montserrat', sans-serif;
 	font-size: 15px;
 }
+
 label.label-login {
 	font-family: 'Montserrat', sans-serif;
-	font-size: 12px;
+	font-size: 10px;
+	text-align: center;
+	color: white;
 }
+
+a.label-login {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 10px;
+	text-align: center;
+	color: white;
+}
+
 body {
 	margin: 0;
 	padding: 0;
 	font-size: 15px;
 	font-family: "Lucida Grande", "Helvetica Nueue", Arial, sans-serif;
+	background-color: #ccc;
 }
 
-nav {
+header {
 	background-color: #333;
 	border: 1px solid #333;
 	color: #fff;
@@ -56,20 +106,20 @@ nav {
 	overflow: hidden;
 }
 
-nav ul {
+header ul {
 	margin: 0;
 	padding: 0;
 	list-style: none;
 }
 
-nav ul li {
+header ul li {
 	margin: 0;
 	display: inline-block;
 	list-style-type: none;
 	transition: all 0.2s;
 }
 
-nav>ul>li>a {
+header>ul>li>a {
 	color: #aaa;
 	display: block;
 	line-height: 2em;
@@ -77,17 +127,17 @@ nav>ul>li>a {
 	text-decoration: none;
 }
 
-nav li>ul {
+header li>ul {
 	display: none;
 	margin-top: 1px;
 	background-color: #bbb;
 }
 
-nav li>ul li {
+header li>ul li {
 	display: block;
 }
 
-nav  li>ul li a {
+header  li>ul li a {
 	color: #111;
 	display: block;
 	line-height: 2em;
@@ -95,21 +145,21 @@ nav  li>ul li a {
 	text-decoration: none;
 }
 
-nav li:hover {
+header li:hover {
 	background-color: #666;
 }
 
-nav li:hover>ul {
+header li:hover>ul {
 	position: absolute;
 	display: block;
 }
 
-nav li>ul>li ul {
+header li>ul>li ul {
 	display: none;
 	background-color: #888;
 }
 
-nav li>ul>li:hover>ul {
+header li>ul>li:hover>ul {
 	position: absolute;
 	display: block;
 	margin-left: 100%;
@@ -123,9 +173,9 @@ label.form-login {
 	font-size: 12px;
 	color: silver;
 	padding-top: 1px;
-    padding-right: 5px;
-    padding-bottom: 2px;
-    padding-left: 5px;
+	padding-right: 5px;
+	padding-bottom: 2px;
+	padding-left: 5px;
 }
 
 input.form-login {
@@ -135,26 +185,109 @@ input.form-login {
 	display: block;
 	color: gray;
 	font-size: 12px;
-	border-top:thin;
-	border-left:thin;
-	border-right:thin;
+	border-top: thin;
+	border-left: thin;
+	border-right: thin;
 	border-bottom-style: solid;
 	border-color: none;
 }
 
-input.form-register {
-	background-color: #ff6f6f; 
-    border-top:thin;
-	border-left:thin;
-	border-right:thin;
+.google {
+	background-color: red;
+	border-top: thin;
+	border-left: thin;
+	border-right: thin;
 	border-color: none;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    color:white;
-    font-size: 12px;
-    font-family: 'Montserrat', Arial, sans-serif;
-    margin-left: 15%;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	border-radius: 4px;
+	color: white;
+	font-size: 10.5px;
+	font-family: 'Montserrat', Arial, sans-serif;
+	width: 50%;
+	
+}
+
+.facebook{
+	background-color: blue;
+	border-top: thin;
+	border-left: thin;
+	border-right: thin;
+	border-color: none;
+	border-radius: 4px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	color: white;
+	font-size: 10.5px;
+	font-family: 'Montserrat', Arial, sans-serif;
+	width: 50%
+}
+
+.google span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.google span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -25px;
+  transition: 0.5s;
+}
+
+.google:hover span {
+  padding-right: 25px;
+}
+
+.google:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.facebook span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.facebook span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -25px;
+  transition: 0.5s;
+}
+
+.facebook:hover span {
+  padding-right: 25px;
+}
+
+.facebook:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+input.form-register {
+	background-color: #ff6f6f;
+	border-top: thin;
+	border-left: thin;
+	border-right: thin;
+	border-color: none;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	color: white;
+	font-size: 12px;
+	font-family: 'Montserrat', Arial, sans-serif;
+	margin-left: 15%;
 }
 
 div.test {
@@ -163,4 +296,10 @@ div.test {
 	border-style: solid;
 }
 
-
+ul {
+	list-style-image: url("Mark.png");
+	list-style-position: inside;
+	text-align: left;
+	color: white;
+	padding-left: 75px;
+}
