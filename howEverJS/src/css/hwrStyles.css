@@ -170,7 +170,7 @@ label.form-login {
 	font-family: 'Montserrat', Arial, sans-serif;
 	margin-left: 35px;
 	display: block;
-	font-size: 12px;
+	font-size: 10.5px;
 	color: silver;
 	padding-top: 1px;
 	padding-right: 5px;
@@ -181,15 +181,16 @@ label.form-login {
 input.form-login {
 	font-family: 'Montserrat', Arial, sans-serif;
 	margin-left: 35px;
-	width: 90%;
+	width: 75%;
 	display: block;
-	color: gray;
-	font-size: 12px;
+	color: white;
+	font-size: 10.5px;
 	border-top: thin;
 	border-left: thin;
 	border-right: thin;
 	border-bottom-style: solid;
 	border-color: none;
+	background-color: #ccc;
 }
 
 .google {
@@ -285,9 +286,9 @@ input.form-register {
 	text-decoration: none;
 	display: inline-block;
 	color: white;
-	font-size: 12px;
+	font-size: 10.5px;
 	font-family: 'Montserrat', Arial, sans-serif;
-	margin-left: 15%;
+	width: 85%;	
 }
 
 div.test {

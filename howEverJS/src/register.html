@@ -1,67 +1,90 @@
 <!DOCTYPE html>
-<html ng-app='hwvr-app'>
-<head>
+<html>
+<head ng-app="hwvr-app">
 <meta charset="UTF-8">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
-<script type="text/javascript" src="login/registerPage.js"></script>
-<link rel="icon" type="image/png" href="login/howEver2.png">
-<link rel="stylesheet" href="/css/hwrStyles.css">
+<script type="text/javascript" src="login/loginPage.js"></script>
+<title>However</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css"
 	integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi"
 	crossorigin="anonymous">
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js"
+	integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK"
+	crossorigin="anonymous"></script>
 
-<title>However</title>
+<style>
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+</style>
+<link rel="stylesheet" href="/css/hwrStyles.css">
 </head>
-<body ng-controller="registerController" bgcolor="">
-	<nav>
+<body ng-controller="registerController">
+	<header>
 		<ul>
-			<li><a href="home.html">Home</a>
-				<ul>
-					<li><a href="presentation.html">presentation</a></li>
-					<li><a href="contact.html">contact</a></li>
-				</ul></li>
-			<li><a href="blog.html">Blog</a></li>
-			<li><a href="shop.html">shop</a>
-				<ul>
-					<li><a href="candy.html">candy</a></li>
-					<li><a href="chocolate.html">chocolate</a></li>
-					<li><a href="icecream.html">ice cream</a></li>
-				</ul></li>
-			<li><a href="news.html">News</a></li>
+			<li><a href="index.html" id="however"><img alt=""
+					src="login/howEver2.png" id="logo" /> HowEver</a></li>
 		</ul>
-	</nav>
-	
-	<form class="form-login" action="login.html" method="post">
-		<span><h2 class="login">
-				<img src="login/howEver2.png" height="50px" width="50px" /> However
-			</h2></span>
-		<fieldset>
-			<legend>Registrarse HowEver</legend>
-			<div class="form-group">
-				<input class="form-login" id="user" type="text"
-					placeholder="Usuario..." />
-			</div>
-			<div class="form-group">
-				<input id="email" class="form-login" type="type"
-					placeholder="Dirección de Correo..." ng-model="email" />
-			</div>
-			<div class="form-group">
-				<input class="form-login" type="text" id="confirm"
-					ng-model="emailConfirm" placeholder="Confirmar Correo">
-			</div>
-			<div class="form-group">
-				<input class="form-login" type="password" id="password"
-					ng-model="password" placeholder="Contraseña" />
-			</div>
-			<div class="form-group">
-				<input class="form-register" type="button" value="Registrarte"
-					ng-click="createUser()" />
-			</div>
-			<label class="label-login">Ya tienes cuenta. <a
-				href="login.html">Login..</a></label>
-		</fieldset>
-	</form>
+	</header>
+	<div class="container">
+		<div class="row">
+			<section class="col-md-4 sect-login form-login">
+				<form class="form-login" action="index.html">
+					<span><h2 class="login">
+							<img src="login/howEver2.png" height="50px" width="50px" />
+							However
+						</h2></span>
+					<div id="center" class="form-group">
+						<div class="form-group">
+							<input class="form-login" id="user" type="text"
+								placeholder="Usuario..." />
+						</div>
+						<div class="form-group">
+							<input id="email" class="form-login" type="type"
+								placeholder="Dirección de Correo..." ng-model="email" />
+						</div>
+						<div class="form-group">
+							<input class="form-login" type="password" id="password"
+								ng-model="password" placeholder="Contraseña" />
+						</div>
+						<div id="center" class="form-group">
+							<input type="button" class="form-register" value="REGISTRATE"/>
+						</div>
+						
+						<label class="label-login">Al
+							registrate<a class="label-login" href=""> aceptas los
+								Terminos Y Condiciones de uso</a> y Politicas de Privacidad de
+							However
+						</label>
+						<hr id="separator" />
+						
+						<div id="center">
+							<button type="button" class="google">
+								<span>Regístrate Con Google</span>
+							</button>
+						</div>
+						
+						<div id="center">
+							<button type="button" class="facebook">
+								<span>Regístrate Con Facebook</span>
+							</button>
+						</div>
+						<a href="login.html" class="label-login">Ya tienes cuenta.
+							Inicia Sesión aquí</a>
+
+					</div>
+				</form>
+			</section>
+			<article class="col-md-8">
+				<h2 class="login">Organiza Y Comparte Tus Ideas</h2>
+				<ul>
+					<li>Gestiona Tus Ideas</li>
+					<li>Organiza Tus Proyectos</li>
+					<li>Comparte Tu conocimiento</li>
+				</ul>
+			</article>
+		</div>
+	</div>
 </body>
 </html>
